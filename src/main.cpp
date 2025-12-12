@@ -472,6 +472,7 @@ int main(int argc, char** argv) {
     //testAnnouncementPropagation();
     //testROV();
 
+
     Graph G;
     std::string rel_path = " ";
     std::string annon_path = " ";
@@ -516,23 +517,8 @@ int main(int argc, char** argv) {
         G.propagateAnnons(i);
     }
 
-    for (int cust : G.nodes[9583]->peers) {
-        if (cust == 7195) {
-            std::cout << "Peer found" << std::endl;
-        }
-    }
 
-    for (int prov : G.nodes[45582]->providers) {
-        if (prov == 9583) {
-            std::cout << "Provider found" << std::endl;
-        }
-    }
 
-    if (G.nodes[9583]->bgp->rib.contains("10.0.0.0/24")) {
-        std::cout << "Received_from : " << G.nodes[9583]->bgp->rib["10.0.0.0/24"]->received_from << std::endl;
-    } else {
-        std::cout << "thing not found" << std::endl;
-    }
 
     writeGraphToCsv(G);
 

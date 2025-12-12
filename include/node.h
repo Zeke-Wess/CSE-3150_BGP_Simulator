@@ -7,7 +7,7 @@ class Node {
 public:
     int rank = -1;
     int ASN;
-    bool rov;
+    bool rov = false;
     std::vector<int> providers;
     std::vector<int> customers;
     std::vector<int> peers;
